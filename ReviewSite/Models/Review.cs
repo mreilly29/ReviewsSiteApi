@@ -15,5 +15,9 @@ namespace ReviewSite.Models
         //connects to Category class
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+
+        //connects many to many with Tag class
+        public virtual List<ReviewTag> ReviewTags { get; set; }
+
     }
 }

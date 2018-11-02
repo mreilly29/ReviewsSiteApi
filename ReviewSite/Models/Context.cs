@@ -11,6 +11,8 @@ namespace ReviewSite.Models
     {
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<ReviewTag> ReviewTags { get; set; }
 
         //SEED DATA
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,7 +38,37 @@ namespace ReviewSite.Models
                 new Category() { Id = 2, Name = "Super"},
                 new Category() { Id=3, Name = "Hard-Working"}
                 );
-            
+
+            modelBuilder.Entity<Tag>().HasData(
+                new Tag() { Id = 1, Name = "Adorable" },
+                new Tag() { Id = 2, Name = "Overacheiver" },
+                new Tag() { Id = 3, Name = "Underappreciated" }
+                );
+            modelBuilder.Entity<ReviewTag>().HasData(
+                new ReviewTag() { Id = 1, ReviewId = 1, TagId = 3},
+                new ReviewTag() { Id = 2, ReviewId = 2, TagId = 1 },
+                new ReviewTag() { Id = 3, ReviewId = 2, TagId = 3 },
+                new ReviewTag() { Id = 4, ReviewId = 3, TagId = 3 },
+                new ReviewTag() { Id = 5, ReviewId = 4, TagId = 1 },
+                new ReviewTag() { Id = 6, ReviewId = 5, TagId = 2 },
+                new ReviewTag() { Id = 7, ReviewId = 5, TagId = 1 },
+                new ReviewTag() { Id = 8, ReviewId = 6, TagId = 3 },
+                new ReviewTag() { Id = 9, ReviewId = 7, TagId = 2 },
+                new ReviewTag() { Id = 10, ReviewId = 7, TagId = 3 },
+                new ReviewTag() { Id = 11, ReviewId = 8, TagId = 2 },
+                new ReviewTag() { Id = 12, ReviewId = 9, TagId = 1 },
+                new ReviewTag() { Id = 13, ReviewId = 9, TagId = 2 },
+                new ReviewTag() { Id = 14, ReviewId = 9, TagId = 3 }
+
+
+
+
+
+
+
+                );
+
+
             base.OnModelCreating(modelBuilder);
         }
 
