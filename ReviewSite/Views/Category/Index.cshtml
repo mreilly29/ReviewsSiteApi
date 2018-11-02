@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ReviewSite.Models.Category>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllCategories</title>
+    <link href="~/css/DisplayAll.css" rel="stylesheet" />
+    <link href="~/css/nav.css" rel="stylesheet" />
+
+</head>
+<body>
+   
+    <h1 align="left">All Categories </h1>
+    <div id="names">
+        @foreach (var category in Model)
+        {
+            <div>
+                <a href="/category/Details/@category.Id">
+                    @category.Name
+                </a>
+            </div>
+        }
+    </div>
+
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/review/allreviews/">All Reviews</a>
+        <a href="/category/index/">All Categories</a>
+    </nav>
+    <script src="~/JavaScript/Script.js"></script>
+</body>
+</html>

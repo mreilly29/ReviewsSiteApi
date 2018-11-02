@@ -1,0 +1,34 @@
+﻿@model ReviewSite.Models.Category
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/css/DisplayAll.css" rel="stylesheet" />
+    <link href="~/css/nav.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <h1>@Model.Name</h1>
+    <div id="names">
+        @foreach (var review in Model.Reviews)
+        {
+
+            <p><a href="/Review/Details/@review.Id">@review.Title</a></p>
+        }
+    </div>
+
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/review/allreviews/">All Reviews</a>
+        <a href="/category/index/">All Categories</a>
+    </nav>
+    <script src="~/JavaScript/Script.js"></script>
+</body>
+</html>

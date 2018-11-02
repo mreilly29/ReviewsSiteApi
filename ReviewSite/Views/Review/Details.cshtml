@@ -1,0 +1,41 @@
+﻿@model ReviewSite.Models.Review
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/css/Main.css" rel="stylesheet" />
+    <link href="~/css/nav.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1 align="center">@Model.Title</h1>
+
+    <h2>Category: @Model.Category.Name</h2>
+
+    <div id="next">
+        @if (Model.Id == 9)
+        {
+            Model.Id = 0;
+        }
+        <a href="/review/details/@(Model.Id+1)" class="button"><span>Next</span></a>
+    </div>
+
+    <div id="content">
+        <p>@Model.Content</p>
+        <img src="@Model.ImageUrl" alt="@Model.Title" />
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/review/allreviews/">All Reviews</a>
+        <a href="/category/index/">All Categories</a>
+    </nav>
+    <script src="~/JavaScript/Script.js"></script>
+</body>
+</html>
