@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewSite.Models;
 
 namespace ReviewSite.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20181103163102_AddReviewIdToTagsModel")]
+    partial class AddReviewIdToTagsModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,14 +150,16 @@ namespace ReviewSite.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int>("ReviewId");
+
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
 
                     b.HasData(
-                        new { Id = 1, Name = "Adorable" },
-                        new { Id = 2, Name = "Overacheiver" },
-                        new { Id = 3, Name = "Underappreciated" }
+                        new { Id = 1, Name = "Adorable", ReviewId = 0 },
+                        new { Id = 2, Name = "Overacheiver", ReviewId = 0 },
+                        new { Id = 3, Name = "Underappreciated", ReviewId = 0 }
                     );
                 });
 

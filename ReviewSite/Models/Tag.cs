@@ -12,5 +12,6 @@ namespace ReviewSite.Models
 
         //connects many to many with review class
         public virtual List<ReviewTag> ReviewTags { get; set; }
+        
     }
 }

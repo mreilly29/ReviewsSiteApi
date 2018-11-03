@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace ReviewSite
 {
     public class Repository<T>
-       where T : class
+        where T : class
     {
-        public DbContext db;
+        private DbContext db;
 
         public Repository(DbContext db)
         {
@@ -49,6 +49,6 @@ namespace ReviewSite
         public IEnumerable<T> GetAll()
         {
             return db.Set<T>().ToList();
-        }       
+        }
     }
 }
