@@ -10,5 +10,6 @@ namespace ReviewSite
     {
         IEnumerable<Tag> GetTagsForReviewId(int reviewId);
         void Create(Tag newTag);
+        Tag GetById(int v);
     }
 }
