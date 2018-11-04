@@ -21,7 +21,8 @@ namespace ReviewSite.Controllers.Api
         [HttpGet("{reviewId}")]
         public IEnumerable<Tag> Get(int reviewId)
         {
-            return tagRepo.GetTagsForReviewId(reviewId);
+            var tags = tagRepo.GetTagsForReviewId(reviewId);
+            return tags;
         }
 
         [HttpPost]
