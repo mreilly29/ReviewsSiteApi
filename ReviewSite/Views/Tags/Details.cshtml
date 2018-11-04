@@ -17,20 +17,22 @@
     <h1 id="tag-name">@Model.Name</h1>
     
     <div id="names">
-        @foreach (var review in Model.ReviewTags)
+       @foreach (var review in Model.ReviewTags)
         {
-            <div> <a href="/review/details/@review.ReviewId">@review.Review.Title</a></div>
-        }
+        <div> 
+            <a href="/review/details/@review.ReviewId">
+                @review.Review.Title
+            </a>
         </div>
+        }
+    </div>
 
 
-
-        <nav>
-            <a href="/">Home</a>
-            <a href="/review/allreviews/">All Reviews</a>
-            <a href="/category/index/">All Categories</a>
-        </nav>
-        <script src="~/JavaScript/Script.js"></script>
-        <script src="~/JavaScript/TagDetailsScript.js"></script>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/review/allreviews/">All Reviews</a>
+        <a href="/category/index/">All Categories</a>
+    </nav>
+    <script src="~/JavaScript/Script.js"></script>
 </body>
 </html>

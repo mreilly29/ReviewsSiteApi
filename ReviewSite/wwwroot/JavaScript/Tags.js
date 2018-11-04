@@ -42,7 +42,10 @@ function createTag() {
         const li = document.createElement('li');
         console.log(tag);
         const ul = document.querySelector('#tag-list');
+        const a = document.createElement('a');
+        a.href = `/tags/details/${tag.id}`
+        a.innerHTML = tag.name;
+        li.appendChild(a);
         
-        li.innerHTML = tag.name;
         ul.appendChild(li);
     }
