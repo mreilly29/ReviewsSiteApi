@@ -2,24 +2,24 @@
     refreshTags();
     const saveTag = document.querySelector('#save-tag');
     saveTag.addEventListener('click', createTag);
-    console.log(reviewId);
 });
 
 function createTag() {
     const tagInput = document.querySelector('#new-tag');
     const newTagText = document.querySelector('#new-tag').value;
+    console.log('the reviewId is: ', reviewId);
     const newTag = {
-        text: newTagText,
-        reviewId: reviewId
+        name: newTagText
+//        reviewId: reviewId
     };
 
-    fetch('/Api/Tags', {
+    fetch(`/api/tags?reviewId=${reviewId}`, {
         method: 'POST',
         body: JSON.stringify(newTag),
         headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Content-Type': 'application/json'
         }
+        
     }).then(() => {
         tagInput.value = '';
         refreshTags();
@@ -29,8 +29,7 @@ function createTag() {
     function refreshTags() {
         const ul = document.querySelector('#tag-list');
         ul.innerHTML = '';
-        let id = reviewId
-        fetch(`/Api/Tags/${id}`)
+        fetch(`/Api/Tags/${reviewId}`)
             .then(res => res.json())
                 .then(data => {
                     console.log(data);

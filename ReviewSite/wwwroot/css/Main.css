@@ -27,7 +27,7 @@ h1, h2 {
         min-width: 10rem;        
         margin: auto;
     }
-#next, #back {
+#next{
     display: flex;
     justify-content: center;
     padding: 1rem;
@@ -71,3 +71,45 @@ h1, h2 {
             opacity: 1;
             right: 0;
         }
+
+#tags{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+    #tags h3 {
+        color: #48271E;
+        text-shadow: 1px 1px 1px #271214;
+        font-size:24px;
+        padding:5px;
+        margin:0;
+    }
+    #tag-list {
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    font-weight:600;
+    }
+        #tag-list li {
+            padding-bottom: 5px;
+            display:flex;
+            justify-content:center;            
+        }
+        #tag-list a {
+            text-decoration: none;
+            color: #48271E;
+        }
+            #tag-list a:hover {
+                color: #B5754B;
+            }
+#add-tags{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+
+}
+#add-tags textarea{
+    height:1.25em;
+}

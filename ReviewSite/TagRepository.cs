@@ -15,12 +15,10 @@ namespace ReviewSite
 
         public IEnumerable<Tag> GetTagsForReviewId(int reviewId)
         {
-            var allTags = from tags in GetAll()
-                          from reviewTag in tags.ReviewTags
-                          where reviewTag.ReviewId == reviewId
-                          select reviewTag.Tag;
-
-            return allTags;
+            return from tags in GetAll()
+                   from reviewTag in tags.ReviewTags
+                   where reviewTag.ReviewId == reviewId
+                   select reviewTag.Tag;
         }
     }
 }

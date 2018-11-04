@@ -26,8 +26,13 @@ namespace ReviewSite.Controllers.Api
         }
 
         [HttpPost]
-        public bool Post([FromBody]Tag newTag)
+        public bool Post([FromBody]Tag newTag, int reviewId)
         {
+            newTag.ReviewTags = new List<ReviewTag>()
+            {
+                new ReviewTag() { ReviewId = reviewId }
+            };
+
             tagRepo.Create(newTag);
             return true;
         }
