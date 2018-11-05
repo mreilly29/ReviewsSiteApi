@@ -10,7 +10,6 @@ function createTag() {
     console.log('the reviewId is: ', reviewId);
     const newTag = {
         name: newTagText
-//        reviewId: reviewId
     };
 
     fetch(`/api/tags?reviewId=${reviewId}`, {

@@ -31,7 +31,7 @@ namespace ReviewSite.Tests
             var tagRepo = Substitute.For<ITagRepository>();
             var underTest = new TagsController(tagRepo);
 
-            underTest.Post(tag);
+            underTest.Post(tag, 42);
 
             tagRepo.Received().Create(tag);
         }

@@ -41,11 +41,11 @@
             background: #271214;
             font-weight: bold;
             padding: 1em 2em;
+            cursor: pointer;
         }
-        
-            nav.open::before {
-                content: 'HIDE MENU';
-            }
+        nav.open::before {
+            content: 'HIDE MENU';
+        }
            
         nav.open a {
             display: block;

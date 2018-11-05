@@ -1,7 +1,10 @@
 ﻿body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 4rem;
     background-color: #FFFFD6;
+}
+main {
+    padding: 4rem;
+    color: #48271E;
 }
 h1, h2 {
     color: #48271E;
@@ -77,6 +80,7 @@ h1, h2 {
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    padding:1rem;
 }
     #tags h3 {
         color: #48271E;
@@ -103,13 +107,63 @@ h1, h2 {
             #tag-list a:hover {
                 color: #B5754B;
             }
-#add-tags{
-    display:flex;
+#add-tags {    
+    display: flex;
+    flex-direction: column;
     align-items:center;
-    justify-content:center;
-
-
+    color: #271214;
 }
-#add-tags textarea{
-    height:1.25em;
+    #add-tags h4 {
+        padding-top:10px;
+        margin:5px;
+    }
+    #add-tags textarea {
+        height: 1.25em;
+        margin: 5px;
+    }
+
+@media screen and (min-width: 425px) {
+    #add-tags {
+        flex-direction:row;
+        justify-content: center;        
+    }
+    #add-tags h4{
+    padding:0;
+    }
+}
+
+#comment-list {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+ #comments h2{
+     text-align:center;
+     margin-bottom:0;
+ }
+#comment-list li {
+    margin:0 auto 1rem auto;
+    border-bottom:groove;
+    width:50vw;
+}
+#comment-list li div {
+    text-align:right;
+    font-size:12px;
+}
+#add-comments textarea {
+    height: 5em;
+    margin: 5px;
+    width: 60vw;
+    display: flex;
+    margin: auto;
+}
+#add-comments h3 {    
+    color: #271214;
+    text-align: center;
+    margin-bottom:3px;;
+}
+#add-comments button {
+    display: flex;
+    margin:auto;
+    margin-top:5px;
 }
